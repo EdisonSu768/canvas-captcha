@@ -65,8 +65,10 @@ app.get('/', function(req, res) {
 })
 
 app.post('/', function(req, res) {
-	if(req.session && req.session.captcha && req.body.captcha && req.session.captcha.toLowerCase() === req.body.captcha.toLowerCase()) res.send('right')
-	else res.send('wrong')
+	if(req.session && req.session.captcha && req.body.captcha && req.session.captcha.toLowerCase() === req.body.captcha.toLowerCase())
+		res.send('right')
+	else
+		res.send('wrong')
 })
 
 app.listen(port, function() {
